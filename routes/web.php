@@ -27,5 +27,6 @@ Route::get('/member/add-new-member',[MemberController::class, 'addNewMember'])->
 
 Route::get('/book',[BookController::class, 'index'])->name('book.view');
 Route::get('/book/add-new-book',[BookController::class, 'addnewbook'])->name('book.new-book');
+Route::get('book/edit-book',[BookController::class, 'editbook'])->name('book.edit-book');
 
 require __DIR__.'/auth.php';

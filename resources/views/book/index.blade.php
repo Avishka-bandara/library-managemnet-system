@@ -68,8 +68,7 @@
                                         </button>
                                     </td>
                                     <td class="align-middle">
-                                        <i class="fa fa-eye d-flex px-2 text-md mb-0 " aria-hidden="true"></i>
-                                    </td>
+                                        <a href="{{route('book.edit-book')}}" style="text-decoration: none;" class="text-secondary"><i class="fa fa-eye d-flex px-2 text-md mb-0 " aria-hidden="true"></i></a>
                                 </tr>
                             </tbody>
                         </table>

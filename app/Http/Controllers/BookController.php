@@ -13,4 +13,8 @@ class BookController extends Controller
     public function addnewbook(){
         return view('book.add-new-book');
     }
+
+    public function editbook(){
+        return view('book.edit-book');
+    }
 }
