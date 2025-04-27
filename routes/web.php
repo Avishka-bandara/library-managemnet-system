@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,5 +22,9 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/member',[MemberController::class, 'index'])->name('member.view');
 Route::get('/member/add-new-member',[MemberController::class, 'addNewMember'])->name('member.add-new-member');
+
+
+
+Route::get('/book',[BookController::class, 'index'])->name('book.view');
 
 require __DIR__.'/auth.php';

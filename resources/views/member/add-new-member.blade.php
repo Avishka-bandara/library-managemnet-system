@@ -6,11 +6,11 @@
 
 
 @section('body-content')
-    <ol class="breadcrumb  mb-0 pb-3 pt-1 px-6 me-sm-6 me-5">
-        <li class="breadcrumb-item text-xxs fs-4">Member</li>
-        <li class="breadcrumb-item text-lg text-dark active font-weight-bolder fs-4" aria-current="page">Add New Member</li>
-    </ol>
-    <div class="container rounded shadow py-4 d-flex flex-column justify-content-center mt-6 p-5" style="background-color: rgb(230, 239, 239)">
+<ol class="breadcrumb  mb-0 pb-3 pt-1 px-6 me-sm-6 me-5">
+    <li class="breadcrumb-item text-xxs fs-4">Member</li>
+    <li class="breadcrumb-item text-lg text-dark active font-weight-bolder fs-4" aria-current="page">Add New Member</li>
+</ol>
+<div class="container rounded shadow py-4 d-flex flex-column justify-content-center mt-6 p-5 " style="background-color: rgb(230, 239, 239)">
         <form action="#" method="POST">
             @csrf
             <div class="row">

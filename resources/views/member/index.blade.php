@@ -5,23 +5,23 @@
 @endsection
 
 @section('body-content')
-    <div class="container py-4 d-flex flex-column justify-content-center ">
-        <ol class="breadcrumb bg-transparent mb-0 pb-3 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-xxs fs-5">Member</li>
-            <li class="breadcrumb-item text-lg text-dark active font-weight-bolder fs-5" aria-current="page">View Member</li>
-        </ol>
+<ol class="breadcrumb  mb-0 pb-3 pt-1 px-6 me-sm-6 me-5">
+    <li class="breadcrumb-item text-xxs fs-4">Member</li>
+    <li class="breadcrumb-item text-lg text-dark active font-weight-bolder fs-4" aria-current="page">Add New Member</li>
+</ol>
+<div class="container py-4 d-flex flex-column justify-content-center">
         <form class="pb-5 " method="POST" action="#">
             <div class="row">
                 <div class="col-md-5">
                     <div class=" input-group-outline my-3">
                         <label class="form-label">Name</label>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" style="box-shadow: none ">
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class=" input-group-outline my-3">
                         <label class="form-label">National Identity Number</label>
-                        <input type="text" class="form-control"> <!-- Changed type from email to text -->
+                        <input type="text" class="form-control" style="box-shadow: none "> 
                     </div>
                 </div>
             </div>
