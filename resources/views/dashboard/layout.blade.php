@@ -17,6 +17,7 @@
 
 <head>
     @vite(['resources/css/app.css'])
+    @vite(['resources/js/app.js'])
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
@@ -252,10 +253,6 @@
 <body>
     @yield('body-content')
 </main>
-<script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
-<script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
-<script src="{{ asset('assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
 @stack('js')
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
