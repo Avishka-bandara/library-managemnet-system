@@ -2,7 +2,6 @@
 @section('title')
     Dashboard
 @endsection
-
 @section('body-content')
         <div class="container-fluid py-4">
             <div class="row">
@@ -561,7 +560,6 @@
                     </div>
                 </div>
             </div>
-           @include('layouts.footer')
         </div>
     </main>
     </div>

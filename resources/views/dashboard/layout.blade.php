@@ -30,8 +30,7 @@
     </title>
     
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
 <aside
@@ -63,7 +62,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white "
-                    href="#">
+                    href="{{route('member.add-new-member') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         {{-- <i style="font-size: 1rem;" class="material-icons ps-2 pe-2 text-center">person_add</i> --}}
                     </div>
@@ -123,13 +122,12 @@
 <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
     navbar-scroll="true">
     <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
+        {{-- <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-                <li class="breadcrumb-item text-sm text-dark active" aria-current="page">titlepage</li>
+                <li class="breadcrumb-item text-lg">Member</li>
+                <li class="breadcrumb-item text-lg text-dark active font-weight-bolder" aria-current="page">View Member</li>
             </ol>
-            <h6 class="font-weight-bolder mb-0">titlepage</h6>
-        </nav>
+        </nav> --}}
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                 <div class="input-group input-group-outline">
@@ -252,18 +250,7 @@
 </nav>
 <body>
     @yield('body-content')
+    
 </main>
-@stack('js')
-<script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-        var options = {
-            damping: '0.5'
-        }
-        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-</script>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<script src="{{ asset('assets/js/material-dashboard.min.js?v=3.0.0') }}"></script>
 </body>
 </html>

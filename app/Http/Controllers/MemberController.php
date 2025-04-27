@@ -9,4 +9,10 @@ class MemberController extends Controller
     public function index(){
         return view('member.index');    
     }
+
+
+    public function addNewMember(){
+        return view('member.add-new-member');    
+    }
 }
+

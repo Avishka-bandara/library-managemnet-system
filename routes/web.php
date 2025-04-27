@@ -20,5 +20,6 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/member',[MemberController::class, 'index'])->name('member.view');
+Route::get('/member/add-new-member',[MemberController::class, 'addNewMember'])->name('member.add-new-member');
 
 require __DIR__.'/auth.php';
