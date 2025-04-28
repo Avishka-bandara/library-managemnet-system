@@ -28,8 +28,8 @@
                 </div>
             </div>
         </form>
-        <div class="row mb-4 ">
-            <div class="col-lg-10 col-md-6 mb-md-0 ">
+        <div class="row mb-4">
+            <div class="col-lg-10 col-md-8 mb-md-0 ">
                 <div class="card">
                     <div class="table-responsive">
                         <table class="table align-items-center mb-0">

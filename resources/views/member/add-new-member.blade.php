@@ -4,14 +4,25 @@
     Add New Member
 @endsection
 
+@vite([
+    'resources/js/member/add-new-member.js'
+    ])
+
 
 @section('body-content')
-<ol class="breadcrumb  mb-0 pb-3 pt-1 px-6 me-sm-6 me-5">
-    <li class="breadcrumb-item text-xxs fs-4">Member</li>
-    <li class="breadcrumb-item text-lg text-dark active font-weight-bolder fs-4" aria-current="page">Add New Member</li>
-</ol>
-<div class="container rounded shadow py-4 d-flex flex-column justify-content-center mt-6 p-5 " style="background-color: rgb(230, 239, 239)">
-        <form action="#" method="POST">
+
+
+<h4 class="py-5 px-6 mb-4">
+    @if (session('success'))
+    <div class="alert alert-success text-white" role="alert">
+        {{ session('success') }}
+    </div>
+    @endif
+    <span class="text-muted fw-light">Member /</span> New Member
+    <hr>
+</h4>
+<div class="container rounded shadow py-2 d-flex flex-column justify-content-center mt-6 p-3 " style="background-color: rgb(230, 239, 239)">
+        <form action="{{route('member.add-new-member-save')}}" method="POST">
             @csrf
             <div class="row">
                 <div class="col-md-6">
@@ -22,16 +33,16 @@
                 </div>
                 <div class="col-md-6">
                     <div class=" input-group-outline my-3">
-                        <label class="form-label">Adress</label>
-                        <input type="text" class="form-control"style="box-shadow: none " id="address" name="address" required>
+                        <label class="form-label">National Identity Number </label>
+                        <input type="text" class="form-control" style="box-shadow: none " id="nic" name="nic" required>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="input-group-outline  my-3">
-                        <label class="form-label">Contact Number</label>
-                        <input type="number" class="form-control" style="box-shadow: none "id="contact_number" name="contact_number" required>
+                        <label class="form-label">Address</label>
+                        <input type="text" class="form-control" style="box-shadow: none "id="address" name="address" required>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -42,6 +53,12 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-6">
+                    <div class=" input-group-outline my-3">
+                        <label class="form-label">Contact number</label>
+                        <input type="text" class="form-control"style="box-shadow: none " id="contact_number" name="contact_number" required>
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="input-group-outline my-3">
                         <label class="form-label">Date Of Birth</label>
