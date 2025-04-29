@@ -27,6 +27,7 @@ Route::Post('/member/add-new-member/save',[MemberController::class, 'addNewMembe
 
 
 
+
 Route::get('/book',[BookController::class, 'index'])->name('book.view');
 Route::get('/book/add-new-book',[BookController::class, 'addnewbook'])->name('book.new-book');
 Route::get('book/edit-book',[BookController::class, 'editbook'])->name('book.edit-book');

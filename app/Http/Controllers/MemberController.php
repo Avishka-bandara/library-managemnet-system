@@ -18,8 +18,13 @@ class MemberController extends Controller
     }
 
     public function addNewMemberSave(Request $request){
-        // dd($request->all());
-        Member:: create([
+
+        $member = Member::where('nic', $request->input('nic'))->first();
+        if ($member) {
+            return redirect()->back()->withInput()->withErrors(['nic' => 'NIC already exists.']);
+        }
+
+        Member::create([
             'member_name'=> $request->input('name'),
             'nic' => $request->input('nic'),
             'address'=> $request->input('address'),
@@ -30,6 +35,13 @@ class MemberController extends Controller
 
         return redirect()->back()->with('success','Member Added Successfully!');
         
+    }
+
+
+    public function viewMembers(){
+        $members = Member::all();
+        
+        return response()->json($members);
     }
 }
 

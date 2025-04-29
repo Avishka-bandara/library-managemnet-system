@@ -4,14 +4,27 @@
     Add New Book
 @endsection
 
+@vite([ 
+    'resources/js/member/add-new-member.js',
+    'resources/assets/libs/toastr/toastr.js',
+
+])
+@vite([
+    'resources/assets/libs/toastr/toastr.css',
+])
 
 @section('body-content')
-    <ol class="breadcrumb  mb-0 pb-3 pt-1 px-6 me-sm-6 me-5">
-        <li class="breadcrumb-item text-xxs fs-4">Book</li>
-        <li class="breadcrumb-item text-lg text-dark active font-weight-bolder fs-4" aria-current="page">Add New Book</li>
-    </ol>
-    <div class="container rounded shadow py-4 d-flex flex-column justify-content-center mt-6 p-5 "
-        style="background-color: rgb(230, 239, 239)">
+<h4 class="py-5 px-6 mb-4">
+    @if (session('success'))
+        <div class="alert alert-success text-white" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+    <span class="text-muted fw-light">Book /</span> Add New Book
+    <hr>
+</h4>
+    <div class="container card py-4 d-flex flex-column justify-content-center mt-6 p-5 "
+        >
         <form action="#" method="POST">
             @csrf
             <div class="row">
