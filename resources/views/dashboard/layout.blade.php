@@ -19,7 +19,7 @@
     @vite(['resources/css/app.css'])
     @vite(['resources/js/app.js'])
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=2, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="{{ asset('assets/img/library logo.jpg') }}">
 
 
@@ -32,8 +32,9 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
+
 <aside
-    class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark"
+    class="col-lg-12 col-md-8 mb-md-0  sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark"
     id="sidenav-main">
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
@@ -117,6 +118,7 @@
         </ul>
     </div>
 </aside>
+
 <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
 <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
     navbar-scroll="true">

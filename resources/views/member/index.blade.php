@@ -5,13 +5,18 @@
 @endsection
 
 @section('body-content')
-<ol class="breadcrumb  mb-0 pb-3 pt-1 px-6 me-sm-6 me-5">
-    <li class="breadcrumb-item text-xxs fs-4">Member</li>
-    <li class="breadcrumb-item text-lg text-dark active font-weight-bolder fs-4" aria-current="page">Add New Member</li>
-</ol>
+<h4 class="py-5 px-6 mb-4">
+    @if (session('success'))
+    <div class="alert alert-success text-white" role="alert">
+        {{ session('success') }}
+    </div>
+    @endif
+    <span class="text-muted fw-light">Members /</span> View Members
+    <hr>
+</h4>
 <div class="container py-4 d-flex flex-column justify-content-center">
-        <form class="pb-5 " method="POST" action="#">
-            <div class="row">
+        <form class=" card p-3 " method="POST" action="#">
+            <div class="row justify-content-center">
                 <div class="col-md-5">
                     <div class=" input-group-outline my-3">
                         <label class="form-label">Name</label>
@@ -26,8 +31,8 @@
                 </div>
             </div>
         </form>
-        <div class="row mb-4 ">
-            <div class="col-lg-10 col-md-6 mb-md-0 ">
+        <div class="row mt-4 py-3 ">
+            <div class="col-lg-12 col-md-8 mb-md-0 ">
                 <div class="card">
                     <div class="table-responsive">
                         <table class="table align-items-center mb-0">

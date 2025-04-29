@@ -21,17 +21,17 @@
     <span class="text-muted fw-light">Member /</span> New Member
     <hr>
 </h4>
-<div class="container rounded shadow py-2 d-flex flex-column justify-content-center mt-6 p-3 " style="background-color: rgb(230, 239, 239)">
-        <form action="{{route('member.add-new-member-save')}}" method="POST">
+<div class="container card py-2 d-flex flex-column justify-content-center mt-6 p-3 " >
+        <form action="{{route('member.add-new-member-save')}}" method="POST" id="add-new-member">
             @csrf
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12">
                     <div class="input-group-outline my-3">
                         <label class="form-label">Name</label>
                         <input type="text" class="form-control" style="box-shadow: none " id="name" name="name" required>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12">
                     <div class=" input-group-outline my-3">
                         <label class="form-label">National Identity Number </label>
                         <input type="text" class="form-control" style="box-shadow: none " id="nic" name="nic" required>
@@ -39,13 +39,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12">
                     <div class="input-group-outline  my-3">
                         <label class="form-label">Address</label>
                         <input type="text" class="form-control" style="box-shadow: none "id="address" name="address" required>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12">
                     <div class=" input-group-outline my-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control"style="box-shadow: none " id="email" name="email">
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-12">
                     <div class=" input-group-outline my-3">
                         <label class="form-label">Contact number</label>
                         <input type="text" class="form-control"style="box-shadow: none " id="contact_number" name="contact_number" required>
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-success mt-5" style="width: 12rem">Save</button>
+            <button type="submit" class="btn btn-success mt-5" id="add-new-member" style="width: 12rem">Save</button>
         </form>
     </div>
 @endsection
