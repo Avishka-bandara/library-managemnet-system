@@ -31,6 +31,7 @@ class MemberController extends Controller
             'contact_number'=> $request->input('contact_number'),
             'email'=> $request->input('email'),
             'dob'=> $request->input('dob'),
+            'is_active' => 1,
         ]);
 
         return redirect()->back()->with('success','Member Added Successfully!');
@@ -74,12 +75,14 @@ class MemberController extends Controller
         // dd($id);
         $member = Member::findorFail($id);
 
+        // log.info($request);
         $member->update([
             'member_name' => $request->input('name'),
             'address' => $request->input('address'),
             'email' => $request->input('email'),
             'contact_number' => $request->input('contact_number'),
             'dob' => $request->input('dob'),
+            'is_active' => $request->input('is_active')
         ]);
         
         return response()->json(['message' => 'Member updated successfully'], 200);

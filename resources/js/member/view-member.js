@@ -64,12 +64,13 @@ $(document).ready(function () {
                     orderable: false,
                     searchable: false,
                     render: function (data) {
-                        if(data.is_active == 1){
-                            return `<span class="badge badge-success">Active</span>`;
+        
+                        if(data == 1){
+                            return `<span class="badge bg-success">Active</span>`;
                             
                     }
                     else{
-                        return `<span class="badge badge-danger">Inactive</span>`;
+                        return `<span class="badge bg-danger">Inactive</span>`;
                     }
                   },
 

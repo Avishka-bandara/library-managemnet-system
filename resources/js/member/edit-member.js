@@ -26,7 +26,7 @@ $(document).on('click', '#delete-record', function(){
 
 
 
-$(document).on('click', '#add-new-member', function(e){
+$(document).on('click', '#add-record', function(e){
     e.preventDefault();
 
     let memberId = $(this).data('id');
@@ -40,8 +40,10 @@ $(document).on('click', '#add-new-member', function(e){
         contact_number: $('#contact_number').val(),
         address: $('#address').val(),
         dob: $('#dob').val(),
+        is_active: $("#is_active").is(":checked") ? 1 : 0,
 
     }
+    console.log(formData);
     
 
     $.ajax({
@@ -50,7 +52,7 @@ $(document).on('click', '#add-new-member', function(e){
         data: formData,
         success: function(response){
             toastr.success(response.message);
-           
+            // window.location.reload();
         
         },
         error:function(xhr){

@@ -25,7 +25,7 @@
         <hr>
     </h4>
     <div class="container card d-flex flex-column justify-content-center mt-6 p-3 ">
-        <form data-id="{{$member->id}}" method="POST" id="add-new-member">
+        <form method="POST" id="add-new-member">
             @csrf
             <div class="row">
                 <div class="col-md-6 col-sm-12">
@@ -82,13 +82,13 @@
             <div class="row">
                 <div class="col-md-6">  
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="Active" name="active" value="1" @if($member->active) checked @endif>
-                        <label class="form-check-label" for="Active">Active</label>
+                        <input class="form-check-input" type="checkbox" role="switch" id="is_active" name="is_active" value="1" {{ $member->is_active ? 'checked' : '' }}>
+                        <label class="form-check-label" for="is_active">Active</label>
                       </div>                
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-success mt-5" id="add-record" style="width: 10rem">update</button>
+            <button type="submit" class="btn btn-success mt-5" id="add-record" data-id="{{$member->id}}" style="width: 10rem">update</button>
             <button type="submit" class="btn btn-danger mt-5" data-id="{{$member->id}}" id="delete-record">Remove</button>
         </form>
     </div>
