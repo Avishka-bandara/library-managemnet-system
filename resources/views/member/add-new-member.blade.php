@@ -8,7 +8,8 @@
 
 
 @section('body-content')
-    <h4 class="py-5 px-6 mb-4">
+<div class="container">
+    <h4>
         @if (session('success'))
             <div class="alert alert-success text-white" role="alert">
                 {{ session('success') }}
@@ -17,7 +18,7 @@
         <span class="text-muted fw-light">Member /</span> Add New Member
         <hr>
     </h4>
-    <div class="container card py-2 d-flex flex-column justify-content-center mt-6 p-3 ">
+    <div class="container card d-flex flex-column justify-content-center mt-6 p-3 ">
         <form action="{{ route('member.add-new-member-save') }}" method="POST" id="add-new-member">
             @csrf
             <div class="row">
@@ -76,4 +77,5 @@
             <button type="submit" class="btn btn-success mt-5" id="add-new-member" style="width: 12rem">Save</button>
         </form>
     </div>
+</div>
 @endsection

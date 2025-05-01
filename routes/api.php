@@ -8,4 +8,9 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/get-members',[MemberController::class, 'viewMembers'])->name('member.view-members');
+Route::get('/member',[MemberController::class, 'index'])->name('member.view');
+Route::get('/view-members',[MemberController::class, 'viewMembers'])->name('member.view-members');
+Route::get('/get-members',[MemberController::class, 'getMember'])->name('member.get-members');
+Route::Post('/update-member/{id}',[MemberController::class, 'updateMember'])->name('member.update-member-save');
+Route::post('/delete-members/{id}',[MemberController::class, 'deleteMember'])->name('member.delete-members');
+

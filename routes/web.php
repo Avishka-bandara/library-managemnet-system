@@ -21,9 +21,11 @@ Route::middleware('auth')->group(function () {
 
 
 Route::get('/member',[MemberController::class, 'index'])->name('member.view');
+Route::get('/get-members',[MemberController::class, 'getMember'])->name('member.get-members');
 Route::get('/member/add-new-member',[MemberController::class, 'addNewMember'])->name('member.add-new-member');
 Route::Post('/member/add-new-member/save',[MemberController::class, 'addNewMemberSave'])->name('member.add-new-member-save');
-
+Route::get('/member/edit-member/{id}',[MemberController::class, 'editMember'])->name('member.get-edit-member');
+// Route::Post('/member/edit-member/{id}',[MemberController::class, 'updateMember'])->name('member.update-member-save');
 
 
 

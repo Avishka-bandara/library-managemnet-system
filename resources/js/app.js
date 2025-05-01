@@ -3,6 +3,7 @@ window.bootstrap = bootstrap;
 
 import 'material-dashboard/assets/js/material-dashboard.js';
 
+
 import { createPopper } from '@popperjs/core';
 window.createPopper = createPopper;
 
