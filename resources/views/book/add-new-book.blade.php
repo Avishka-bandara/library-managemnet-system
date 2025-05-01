@@ -5,7 +5,7 @@
 @endsection
 
 @vite([ 
-    'resources/js/member/add-new-member.js',
+    'resources/js/member/add-new-book.js',
     'resources/assets/libs/toastr/toastr.js',
 
 ])
@@ -30,15 +30,15 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="input-group-outline my-3">
-                        <label class="form-label fs-6">Code</label>
-                        <input type="text" class="form-control" style="box-shadow: none " id="code" name="code"
+                        <label class="form-label fs-6">ISBN</label>
+                        <input type="text" class="form-control" style="box-shadow: none " id="book_isbn" name="code"
                             required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class=" input-group-outline my-3">
                         <label class="form-label fs-6">Book Name</label>
-                        <input type="text" class="form-control"style="box-shadow: none " id="book_name" name="book_name"
+                        <input type="text" class="form-control" style="box-shadow: none " id="book_name" name="book_name"
                             required>
                     </div>
                 </div>
@@ -47,14 +47,14 @@
                 <div class="col-md-6">
                     <div class="input-group-outline  my-3">
                         <label class="form-label fs-6">Author</label>
-                        <input type="number" class="form-control" style="box-shadow: none "id="author" name="author"
+                        <input type="number" class="form-control" style="box-shadow: none " id="book_author" name="author"
                             required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class=" input-group-outline my-3">
                         <label class="form-label fs-6">Publisher</label>
-                        <input type="email" class="form-control"style="box-shadow: none " id="publisher" name="publisher">
+                        <input type="email" class="form-control" style="box-shadow: none " id="book_publisher" name="publisher">
                     </div>
                 </div>
             </div>
@@ -62,11 +62,14 @@
                 <div class="col-md-6 mb-4 ">
                     <div class="input-group-outline">
                         <label class="form-label fs-6 my-3">Category</label>
-                        <select class="form-select" id="category" name="category" style="box-shadow: none;">
-                            <option selected disabled>Select Category</option>
-                            <option value="Action">Action</option>
-                            <option value="Another action">Another action</option>
-                            <option value="Something else">Something else here</option>
+                        <select class="form-select" id="book_category" name="category" style="box-shadow: none;">
+                            <option selected disabled>Select a catergory</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Non-Fiction">Non-Fiction</option>
+                            <option value="Science">Science</option>
+                            <option value="History">History</option>
+                            <option value="Biography">Biography</option>
+
                         </select>
                     </div>
                 </div>
