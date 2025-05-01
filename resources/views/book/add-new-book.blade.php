@@ -23,16 +23,18 @@
     <span class="text-muted fw-light">Book /</span> Add New Book
     <hr>
 </h4>
-    <div class="container card py-4 d-flex flex-column justify-content-center mt-6 p-5 "
-        >
-        <form action="#" method="POST">
+    <div class="container card py-4 d-flex flex-column justify-content-center mt-6 p-5 ">
+        <form action="{{route("book.add-new-book-save")}}" method="POST">
             @csrf
             <div class="row">
                 <div class="col-md-6">
                     <div class="input-group-outline my-3">
                         <label class="form-label fs-6">ISBN</label>
-                        <input type="text" class="form-control" style="box-shadow: none " id="book_isbn" name="code"
+                        <input type="text" class="form-control" style="box-shadow: none " id="book_isbn" name="book_isbn"
                             required>
+                        @error('book_isbn')
+                            <div class="text-danger mt-1">{{ $message }}</div>
+                        @enderror
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -47,14 +49,14 @@
                 <div class="col-md-6">
                     <div class="input-group-outline  my-3">
                         <label class="form-label fs-6">Author</label>
-                        <input type="number" class="form-control" style="box-shadow: none " id="book_author" name="author"
+                        <input type="text" class="form-control" style="box-shadow: none " id="book_author" name="author"
                             required>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class=" input-group-outline my-3">
                         <label class="form-label fs-6">Publisher</label>
-                        <input type="email" class="form-control" style="box-shadow: none " id="book_publisher" name="publisher">
+                        <input type="text" class="form-control" style="box-shadow: none " id="book_publisher" name="publisher">
                     </div>
                 </div>
             </div>
@@ -73,9 +75,16 @@
                         </select>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class=" input-group-outline my-3">
+                        <label class="form-label fs-6">Quantity</label>
+                        <input type="number" class="form-control" style="box-shadow: none " id="book_quantity" name="quantity"
+                            required>
+                    </div>
+                </div>
             </div>
 
-            <button type="submit" class="btn btn-success mt-5" style="width: 12rem">Save</button>
+            <button type="submit" class="btn btn-success mt-5" id="add-new-book"style="width: 12rem">Save</button>
         </form>
     </div>
 @endsection

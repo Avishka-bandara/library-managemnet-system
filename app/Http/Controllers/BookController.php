@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Book;
 
 class BookController extends Controller
 {
@@ -18,5 +19,27 @@ class BookController extends Controller
 
     public function editbook(){
         return view('book.edit-book');
+    }
+
+
+    public function addNewBookSave(Request $request){
+        // dd($request);
+
+        $book = Book::where('book_isbn', $request->input('book_isbn'))->first();
+        if ($book) {
+            return redirect()->back()->withInput()->withErrors(['book_isbn' => 'ISBN already exists.']);
+        }
+
+        Book::create([
+            'book_name' => $request->book_name,
+            'book_isbn' => $request->book_isbn,
+            'book_author' => $request->author,
+            'book_publisher' => $request->publisher,
+            'book_category' => $request->category,
+            'book_quantity' => $request->quantity,
+        ]);
+
+        return redirect()->back()->with('success', 'Book added successfully.');
+
     }
 }

@@ -33,5 +33,6 @@ Route::get('/member/edit-member/{id}',[MemberController::class, 'editMember'])->
 Route::get('/book',[BookController::class, 'index'])->name('book.view');
 Route::get('/book/add-new-book',[BookController::class, 'addnewbook'])->name('book.new-book');
 Route::get('book/edit-book',[BookController::class, 'editbook'])->name('book.edit-book');
+Route::Post('/book/add-new-book/save',[BookController::class, 'addNewBookSave'])->name('book.add-new-book-save');
 
 require __DIR__.'/auth.php';
