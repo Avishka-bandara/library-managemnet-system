@@ -18,7 +18,7 @@
         <span class="text-muted fw-light">Member /</span> Add New Member
         <hr>
     </h4>
-    <div class="container card d-flex flex-column justify-content-center mt-6 p-3 ">
+    <div class="container card d-flex flex-column justify-content-center mt-6 p-5 ">
         <form action="{{ route('member.add-new-member-save') }}" method="POST" id="add-new-member">
             @csrf
             <div class="row">

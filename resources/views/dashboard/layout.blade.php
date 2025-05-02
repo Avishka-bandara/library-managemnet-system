@@ -55,18 +55,18 @@
                 <a class="nav-link text-white  "
                     href="{{ route('member.view') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        {{-- <i style="font-size: 1.2rem;" class="material-icons ps-2 pe-2 text-center">person</i> --}}
+                        
+                        <span class="nav-link-text ms-1">View Members</span>
                     </div>
-                    <span class="nav-link-text ms-1">View Members</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white "
                     href="{{route('member.add-new-member') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        {{-- <i style="font-size: 1rem;" class="material-icons ps-2 pe-2 text-center">person_add</i> --}}
+                        
+                        <span class="nav-link-text ms-1">Add New Member</span>
                     </div>
-                    <span class="nav-link-text ms-1">Add New Member</span>
                 </a>
             </li>
             <li class="nav-item mt-3">
@@ -76,18 +76,18 @@
                 <a class="nav-link text-white"
                     href="{{ route('book.view') }}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        {{-- <i class="material-icons opacity-10">dashboard</i> --}}
+                       
+                        <span class="nav-link-text ms-1">View Books</span>
                     </div>
-                    <span class="nav-link-text ms-1">View Books</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white"
                     href="{{route('book.new-book')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        {{-- <i class="material-icons opacity-10">table_view</i> --}}
+                        
+                        <span class="nav-link-text ms-1">Add New Books</span>
                     </div>
-                    <span class="nav-link-text ms-1">Add New Books</span>
                 </a>
             </li>
 
@@ -98,9 +98,16 @@
                 <a class="nav-link text-white  "
                     href="#">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        {{-- <i style="font-size: 1.2rem;" class="fas fa-user-circle ps-2 pe-2 text-center"></i> --}}
+                        <span class="nav-link-text ms-1">View Released Books</span>
                     </div>
-                    <span class="nav-link-text ms-1">View Released Books</span>
+                </a>
+            </li>
+                <li class="nav-item">
+                <a class="nav-link text-white  "
+                    href="#">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <span class="nav-link-text ms-1">Release new book</span>
+                    </div>
                 </a>
             </li>            
             <li class="nav-item mt-3">
