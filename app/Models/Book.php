@@ -13,5 +13,6 @@ class Book extends Model
         'book_author',
         'book_publisher',
         'book_category',
+        'quantity'
     ];
 }

@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
-use App\Http\Controllers\BoookController;
+use App\Http\Controllers\BookController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -19,3 +19,4 @@ Route::post('/delete-members/{id}',[MemberController::class, 'deleteMember'])->n
 
 // Book Routes
 
+Route::get('/get-books',[BookController::class, 'getBook'])->name('book.get-books');

@@ -9,7 +9,6 @@ class BookController extends Controller
 {
     public function index(){
 
-        
         return view('book.index');
     }
 
@@ -41,5 +40,22 @@ class BookController extends Controller
 
         return redirect()->back()->with('success', 'Book added successfully.');
 
+    }
+
+    public function getBook(Request $request){
+
+        $name = $request->input('book_name');
+        $code = $request->input('book_isbn');
+
+        
+
+
+        $book = Book::where('book_name',$name)->where('book_isbn',$code)->get();
+
+        if(!$book){
+            return response()->json(['error' => 'Book not found']);
+        }
+    
+        return response()->json(['data' => $book->values()]);
     }
 }

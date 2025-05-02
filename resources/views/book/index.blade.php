@@ -6,9 +6,11 @@
 
 
 @vite([
-    'resources/css/app.css',
-    'resources/js/book/view-book.js',
-    'resources/js/app.js',
+    'resources/assets/libs/toastr/toastr.js',
+    'resources/css/app.css',  
+    'resources/js/book/view-book.js', 
+    'resources/js/app.js'
+    
 ])
 
 
@@ -24,7 +26,7 @@
             <hr>
         </h4>
         <div class="container py-4 d-flex flex-column justify-content-center">
-            <form class="card p-3" method="POST" action="#">
+            <form class="card p-4" method="POST" action="#">
                 <div class="row justify-content-center">
                     <div class="col-md-5">
                         <div class=" input-group-outline my-3">
@@ -44,58 +46,23 @@
             </form>
             <div class="row mt-4 py-3">
                 <div class="col-lg-12 col-md-8 mb-md-0 ">
-                    <div class="card">
-                        <div class="table-responsive">
-                            <table class="table align-items-center mb-0">
-                                <thead>
-                                    <tr>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7">code
-                                        </th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">
-                                            book
-                                            name</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">
-                                            author</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">
-                                            catergory</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">
-                                            status</th>
-                                        <th class="text-uppercase text-secondary text-md font-weight-bolder opacity-7 ps-2">
-                                            Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex px-2 text-md mb-0 "> Spotify
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex px-2 text-md mb-0 "> Spotify
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="d-flex px-2 text-md mb-0 "> Spotify
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <div class="d-flex px-2 text-md mb-0 "> Spotify
-                                            </div>
-                                        </td>
-
-                                        <td class="align-middle">
-                                            <button class="btn btn-success mb-0" style="pointer-events: none;">
-                                                Available
-                                            </button>
-                                        </td>
-                                        <td class="align-middle">
-                                            <a href="{{ route('book.edit-book') }}" style="text-decoration: none;"
-                                                class="text-secondary"><i class="fa fa-eye d-flex px-2 text-md mb-0 "
-                                                    aria-hidden="true"></i></a>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="table-responsive">
+                        <table class="table mb-0 datatables-ajax border" id="datatables-ajax">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>Id</th>
+                                    <th>Code</th>
+                                    <th>Book Name</th>
+                                    <th>Author</th>
+                                    <th>Publisher</th>
+                                    <th>Available</th>
+                                    <th>Quantity</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

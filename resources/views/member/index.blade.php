@@ -4,7 +4,11 @@
     View Member
 @endsection
 
-@vite(['resources/css/app.css', 'resources/js/member/view-member.js', 'resources/js/app.js'])
+@vite([
+    'resources/css/app.css', 
+    'resources/js/member/view-member.js', 
+    'resources/js/app.js'
+])
 
 @section('body-content')
     <div class="container">

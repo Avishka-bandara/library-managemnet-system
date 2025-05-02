@@ -19,6 +19,8 @@ $(document).ready(function () {
                     d.name = $('#name').val();
                     d.nic = $('#nic').val();
                 },
+            
+                
             },
             columns: [
                 { data: null, title: "" },
