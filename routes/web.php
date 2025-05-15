@@ -25,7 +25,7 @@ Route::get('/get-members',[MemberController::class, 'getMember'])->name('member.
 Route::get('/member/add-new-member',[MemberController::class, 'addNewMember'])->name('member.add-new-member');
 Route::Post('/member/add-new-member/save',[MemberController::class, 'addNewMemberSave'])->name('member.add-new-member-save');
 Route::get('/member/edit-member/{id}',[MemberController::class, 'editMember'])->name('member.get-edit-member');
-// Route::Post('/member/edit-member/{id}',[MemberController::class, 'updateMember'])->name('member.update-member-save');
+
 
 
 
@@ -34,5 +34,11 @@ Route::get('/book',[BookController::class, 'index'])->name('book.view');
 Route::get('/book/add-new-book',[BookController::class, 'addnewbook'])->name('book.new-book');
 Route::get('book/edit-book',[BookController::class, 'editbook'])->name('book.edit-book');
 Route::Post('/book/add-new-book/save',[BookController::class, 'addNewBookSave'])->name('book.add-new-book-save');
+
+
+
+
+
+Route::get('/release/new-release',[BookController::class, 'newBookRelease'])->name('book.new-release');
 
 require __DIR__.'/auth.php';

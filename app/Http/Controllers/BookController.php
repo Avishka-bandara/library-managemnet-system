@@ -58,4 +58,8 @@ class BookController extends Controller
     
         return response()->json(['data' => $book->values()]);
     }
+
+    public function newBookRelease(){
+        return view('book.release-book');
+    }
 }
