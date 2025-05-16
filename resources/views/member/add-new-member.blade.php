@@ -32,7 +32,7 @@
                 <div class="col-md-6 col-sm-12">
                     <div class=" input-group-outline my-3">
                         <label class="form-label">National Identity Number </label>
-                        <input type="text" class="form-control" style="box-shadow: none " id="nic" name="nic"
+                        <input type="text" class="form-control" style="box-shadow: none max-length:12" id="nic" name="nic"
                             value="{{ old('nic') }}" required>
                         @error('nic')
                             <div class="text-danger mt-1">{{ $message }}</div>

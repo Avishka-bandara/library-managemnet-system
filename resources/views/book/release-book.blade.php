@@ -5,7 +5,9 @@
     Release a book
 @endsection
 
-@vite(['resources/js/member/add-new-member.js'])
+
+
+@vite(['resources/js/book/release-book.js'])
 
 
 @section('body-content')
@@ -25,57 +27,49 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="input-group-outline my-3">
-                        <label class="form-label">Name</label>
-                        <input type="text" class="form-control" style="box-shadow: none " id="name" name="name"
-                            value="{{ old('name') }}"required>
+                        <label class="form-label">Member Name</label>
+                        <select class="form-control" style="box-shadow: none " id="name" name="name"
+                            required>
+                            <option value="" readonly>select a memeber</option>
+                            @foreach ($members as $member)
+                                <option value="{{ $member->id }}">{{ $member->member_name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class=" input-group-outline my-3">
                         <label class="form-label">National Identity Number </label>
                         <input type="text" class="form-control" style="box-shadow: none " id="nic" name="nic"
-                            value="{{ old('nic') }}" required>
-                        @error('nic')
-                            <div class="text-danger mt-1">{{ $message }}</div>
-                        @enderror
+                            value="{{ old('nic') }}" disabled>
+
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="input-group-outline  my-3">
-                        <label class="form-label">Address</label>
-                        <input type="text" class="form-control" style="box-shadow: none "id="address" name="address"
-                            value="{{ old('address') }}" required>
+                        <label class="form-label">Book Name</label>
+                        <select class="form-control" style="box-shadow: none " id="book_name" name="book_name"required>
+                            <option value="" readonly>select a book</option>
+                            @foreach($books as $book)
+                            <option value="{{$book->id}}">{{$book->book_isbn}}.{{$book->book_name}}</option>
+                            @endforeach
+                        </select>
                             
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class=" input-group-outline my-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" style="box-shadow: none " id="email" name="email"
-                            value="{{ old('email') }}">
+                        <label class="form-label">Date</label>
+                        <input type="date" class="form-control" style="box-shadow: none " id="date" name="date"
+                            value="{{ $date }}" disabled>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <div class=" input-group-outline my-3">
-                        <label class="form-label">Contact number</label>
-                        <input type="text" class="form-control" style="box-shadow: none " id="contact_number"
-                            name="contact_number" value="{{ old('contact_number') }}" required>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="input-group-outline my-3">
-                        <label class="form-label">Date Of Birth</label>
-                        <input type="Date" class="form-control" style="box-shadow: none " id="dob" name="dob"
-                            value="{{ old('dob') }}" required>
-                    </div>
-                </div>
-            </div>
+            
 
-            <button type="submit" class="btn btn-success mt-5" id="add-new-member" style="width: 12rem">Save</button>
+            <button type="submit" class="btn btn-success mt-5" id="add-new-release" style="width: 12rem">Release</button>
         </form>
     </div>
 </div>

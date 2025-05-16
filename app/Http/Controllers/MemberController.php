@@ -97,5 +97,14 @@ class MemberController extends Controller
         return response()->json(['message' => 'Member deleted successfully'], 200);
 
     }
+
+    public function getMemberNic($id){
+
+        $member = Member::findOrFail($id);
+        if(!$member){
+            return response()->json(['message' => 'Member not found'], 404);
+        };
+        return response()->json(['data' => $member->nic]);
+    }
 }
 

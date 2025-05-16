@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use Carbon\Carbon;
+use App\Models\Member;
 
 class BookController extends Controller
 {
@@ -60,6 +62,10 @@ class BookController extends Controller
     }
 
     public function newBookRelease(){
-        return view('book.release-book');
+
+        $books = Book::all();
+        $members = Member::all();
+        $date = Carbon::now()->format('Y-m-d');
+        return view('book.release-book', compact('books', 'members', 'date'));
     }
 }

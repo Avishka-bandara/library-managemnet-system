@@ -17,6 +17,12 @@ Route::post('/delete-members/{id}',[MemberController::class, 'deleteMember'])->n
 
 
 
+
+Route::get('/get-member-nic/{id}', [MemberController::class, 'getMemberNic']);
+
+
+
+
 // Book Routes
 
 Route::get('/get-books',[BookController::class, 'getBook'])->name('book.get-books');
