@@ -26,3 +26,9 @@ Route::get('/get-member-nic/{id}', [MemberController::class, 'getMemberNic']);
 // Book Routes
 
 Route::get('/get-books',[BookController::class, 'getBook'])->name('book.get-books');
+
+
+
+
+
+Route::Post('/release/release-new-book/save',[MemberController::class, 'releaseNewBook'])->name('member.release-new-book-save');

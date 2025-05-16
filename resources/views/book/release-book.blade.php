@@ -7,7 +7,11 @@
 
 
 
-@vite(['resources/js/book/release-book.js'])
+@vite([
+    'resources/js/book/release-book.js',
+    'resources/assets/libs/toastr/toastr.js',
+    'resources/assets/libs/toastr/toastr.css',
+])
 
 
 @section('body-content')
@@ -22,17 +26,17 @@
         <hr>
     </h4>
     <div class="container card d-flex flex-column justify-content-center mt-6 p-5 ">
-        <form action="{{ route('member.add-new-member-save') }}" method="POST" id="add-new-member">
+        <form action="#" method="POST" id="release-book-form">
             @csrf
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="input-group-outline my-3">
                         <label class="form-label">Member Name</label>
-                        <select class="form-control" style="box-shadow: none " id="name" name="name"
+                        <select class="form-control" style="box-shadow: none " id="member_id" name="member_id"
                             required>
                             <option value="" readonly>select a memeber</option>
                             @foreach ($members as $member)
-                                <option value="{{ $member->id }}">{{ $member->member_name }}</option>
+                                <option value="{{ $member->id}}">{{ $member->member_name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -41,7 +45,7 @@
                     <div class=" input-group-outline my-3">
                         <label class="form-label">National Identity Number </label>
                         <input type="text" class="form-control" style="box-shadow: none " id="nic" name="nic"
-                            value="{{ old('nic') }}" disabled>
+                            value="{{ old('nic') }}" readonly>
 
                     </div>
                 </div>
@@ -50,7 +54,7 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="input-group-outline  my-3">
                         <label class="form-label">Book Name</label>
-                        <select class="form-control" style="box-shadow: none " id="book_name" name="book_name"required>
+                        <select class="form-control" style="box-shadow: none " id="book_id" name="book_id"required>
                             <option value="" readonly>select a book</option>
                             @foreach($books as $book)
                             <option value="{{$book->id}}">{{$book->book_isbn}}.{{$book->book_name}}</option>
@@ -62,8 +66,8 @@
                 <div class="col-md-6 col-sm-12">
                     <div class=" input-group-outline my-3">
                         <label class="form-label">Date</label>
-                        <input type="date" class="form-control" style="box-shadow: none " id="date" name="date"
-                            value="{{ $date }}" disabled>
+                        <input type="date" class="form-control" style="box-shadow: none " id="release_date" name="release_date"
+                            value="{{ $date }}" readonly>
                     </div>
                 </div>
             </div>

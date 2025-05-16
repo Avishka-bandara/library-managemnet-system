@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('book_id');
             $table->unsignedBigInteger('member_id');
-            $table->date('released_date');
+            $table->date('released_date')->nullable();
             $table->date('returned_date')->nullable();
             $table->timestamps();
             

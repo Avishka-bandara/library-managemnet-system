@@ -2,9 +2,12 @@
 
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
+use App\Models\BookRelease;
+use App\Models\Book;
 
 class MemberController extends Controller
 {
@@ -106,5 +109,26 @@ class MemberController extends Controller
         };
         return response()->json(['data' => $member->nic]);
     }
+
+
+    public function releaseNewBook(request $request){
+        // dd($request->all());
+
+    $validated = $request->validate([
+            'book_id' => 'required',
+            'member_id' => 'required',
+            'release_date' => 'required|date',
+            'nic' => 'required',
+            // 'return_date' => 'required|date|after:release_date',
+        ]);
+        $release = BookRelease::create([
+            'book_id' => $request->input('book_id'),
+            'member_id' => $request->input('member_id'),
+            'released_date' => $request->input('release_date'),
+        ]);
+        
+        return response()->json(['message' => 'Book released successfully'], 200);
+    }
+
 }
 

@@ -38,7 +38,7 @@ Route::Post('/book/add-new-book/save',[BookController::class, 'addNewBookSave'])
 
 
 
-
 Route::get('/release/new-release',[BookController::class, 'newBookRelease'])->name('book.new-release');
+Route::Post('/release/release-new-book/save',[MemberController::class, 'releaseNewBook'])->name('member.release-new-book-save');
 
 require __DIR__.'/auth.php';
