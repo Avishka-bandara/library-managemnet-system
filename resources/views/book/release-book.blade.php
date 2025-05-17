@@ -26,7 +26,7 @@
         <hr>
     </h4>
     <div class="container card d-flex flex-column justify-content-center mt-6 p-5 ">
-        <form action="#" method="POST" id="release-book-form">
+        <form action="{{route('member.release-new-book-save')}}" method="POST" id="release-book-form">
             @csrf
             <div class="row">
                 <div class="col-md-6 col-sm-12">

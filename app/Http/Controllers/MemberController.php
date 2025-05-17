@@ -3,6 +3,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 use App\Models\Member;
@@ -121,10 +123,15 @@ class MemberController extends Controller
             'nic' => 'required',
             // 'return_date' => 'required|date|after:release_date',
         ]);
+
+        $releaseDate =Carbon::parse($request->input('release_date'));
+        $returnDate = $releaseDate->copy()->addDays(7); 
+       
         $release = BookRelease::create([
             'book_id' => $request->input('book_id'),
             'member_id' => $request->input('member_id'),
             'released_date' => $request->input('release_date'),
+            'returned_date' => $returnDate,
         ]);
         
         return response()->json(['message' => 'Book released successfully'], 200);

@@ -32,3 +32,4 @@ Route::get('/get-books',[BookController::class, 'getBook'])->name('book.get-book
 
 
 Route::Post('/release/release-new-book/save',[MemberController::class, 'releaseNewBook'])->name('member.release-new-book-save');
+Route::get('/view-releases',[BookController::class, 'releaseBookDetail'])->name('book.view-release');

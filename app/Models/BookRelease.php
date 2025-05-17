@@ -12,7 +12,7 @@ class BookRelease extends Model
         'book_id',
         'member_id',
         'released_date',
-        'return_date',
+        'returned_date',
         'status',
     ];
 

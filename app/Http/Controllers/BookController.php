@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Book;
 use Carbon\Carbon;
 use App\Models\Member;
+use App\Models\BookRelease;
 
 class BookController extends Controller
 {
@@ -67,5 +70,33 @@ class BookController extends Controller
         $members = Member::all();
         $date = Carbon::now()->format('Y-m-d');
         return view('book.release-book', compact('books', 'members', 'date'));
+    }
+
+    public function viewBookRelease(){
+      return view ('book.view-release');
+    }
+
+    public function releaseBookDetail(Request $request){
+
+        $book = $request->input('book_name');
+        $code = $request->input('book_isbn');
+
+        $data = DB::table('book_released_detail as release')
+            ->join('book as book', 'release.book_id', '=', 'book.id')
+            ->join('table_member_detail as member', 'release.member_id', '=', 'member.id')
+            ->where('book.book_name', $book)
+            ->where('book.book_isbn', $code)
+            ->select('book.book_name', 
+                    'book.book_isbn as code',
+                    'member.member_name',
+                    'release.released_date',
+                    'release.returned_date',
+                    'release.id')
+            ->get();
+            
+        
+        return response()->json(['data' => $data->values()],200);
+
+       
     }
 }

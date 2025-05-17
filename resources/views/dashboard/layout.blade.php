@@ -34,7 +34,7 @@
 </head>
 
 <aside
-    class="col-lg-12 col-md-8 mb-md-0  sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark"
+    class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 bg-gradient-dark d-none d-md-block" style="overflow-y: auto; max-height: calc(100% - 100px);"
     id="sidenav-main">
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
@@ -96,7 +96,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white  "
-                    href="#">
+                    href="{{route('book.view-release')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <span class="nav-link-text ms-1">View Released Books</span>
                     </div>

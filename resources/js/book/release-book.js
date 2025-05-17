@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $, { ajax } from 'jquery';
 import toastr from 'toastr';
 // Make sure jQuery is loaded before this script in your HTML file
 let baseurl ="http://127.0.0.1:8000/";
@@ -45,6 +45,7 @@ $(document).on('submit', '#release-book-form', function(e){
         data: formData,
         success: function(response){
             toastr.success(response.message);
+            $('#release-book-form')[0].reset();
         },
         error: function(xhr){
             toastr.error('Error: ' + xhr.responseJSON.message); 
