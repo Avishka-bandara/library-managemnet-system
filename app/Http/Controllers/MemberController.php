@@ -133,6 +133,12 @@ class MemberController extends Controller
             'released_date' => $request->input('release_date'),
             'returned_date' => $returnDate,
         ]);
+
+        $bookId = Book::where('id', $request->input('book_id'))->first();
+        $bookId->update([
+            'quantity'=> $bookId->quantity - 1, 
+        ]);
+
         
         return response()->json(['message' => 'Book released successfully'], 200);
     }

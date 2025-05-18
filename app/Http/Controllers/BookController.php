@@ -40,7 +40,7 @@ class BookController extends Controller
             'book_author' => $request->author,
             'book_publisher' => $request->publisher,
             'book_category' => $request->category,
-            'book_quantity' => $request->quantity,
+            'quantity' => $request->quantity,
         ]);
 
         return redirect()->back()->with('success', 'Book added successfully.');
