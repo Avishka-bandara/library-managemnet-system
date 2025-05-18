@@ -21,8 +21,10 @@ class BookController extends Controller
         return view('book.add-new-book');
     }
 
-    public function editbook(){
-        return view('book.edit-book');
+    public function editbook($id){
+
+        $book =Book::find($id);
+        return view('book.edit-book', compact('book'));
     }
 
 
@@ -41,6 +43,7 @@ class BookController extends Controller
             'book_publisher' => $request->publisher,
             'book_category' => $request->category,
             'quantity' => $request->quantity,
+            'remarks' => "",
         ]);
 
         return redirect()->back()->with('success', 'Book added successfully.');
@@ -98,5 +101,19 @@ class BookController extends Controller
         return response()->json(['data' => $data->values()],200);
 
        
+    }
+
+    public function deleteBook(Request $request, $id){
+        $book = Book::find($id);
+        if(!$book){
+            return response()->json(['error' => 'Book not found'], 404);
+        }
+        else{
+            $book->update([
+                'is_available' => -1,
+                'remarks' => $request->input('remarks')
+            ]);
+            return response()->json(['message' => 'Book deleted successfully'], 200);
+        }
     }
 }
