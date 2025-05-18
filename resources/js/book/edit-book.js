@@ -6,7 +6,7 @@ $(document).on('click', '#btn-delete', function (e){
     e.preventDefault();
     let bookId = $(this).val();
     let remarks = $('#remarks').val();
-    if(remarks == ''){
+    if(!remarks){
         toastr.error('Please enter remarks');
         return;
     }
