@@ -63,9 +63,14 @@ $(document).ready(function () {
                     render: function (data) {
                         return `
                              <div class="d-inline-block">  
-                                <a href= "book/edit-book" style="text-decoration: none;"  class="text-secondary">
-                                    <i class="fa fa-eye d-flex px-2 text-md mb-0 "aria-hidden="true">  </i>  
+                                <a href= "book/edit-book" style="text-decoration: none; "  class="text-secondary view-link">
+                                    <i class="fa fa-eye d-flex px-2 text-md mb-0" aria-hidden="true">  </i>  
                                 </a>
+                                <style>
+                                .view-link:hover .fa-eye {
+                                    color:rgb(31, 76, 222) !important;
+                                }
+                            </style>
                             </div>
                             `;
                     },

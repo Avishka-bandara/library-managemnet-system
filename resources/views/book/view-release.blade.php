@@ -10,7 +10,8 @@
     'resources/assets/libs/toastr/toastr.js',
     'resources/css/app.css',  
     'resources/js/book/view-release.js', 
-    'resources/js/app.js'
+    'resources/js/app.js',
+    'resources/scss/app.scss'
     
 ])
 
@@ -46,11 +47,11 @@
                 </div>
             </form>
             <div class="row mt-4 py-3">
-                <div class="col-lg-12 col-md-8 mb-md-0 ">
-                    <div class="table-responsive">
-                       <table class="table mb-0 datatables-ajax border" id="datatables-ajax">
+                <div class="card">
+                    <div class="card-datatable text-nowrap table-responsive">
+                       <table class="datatables-ajax table" id="datatables-ajax">
                             <thead>
-                                <tr class="text-center">
+                                <tr>
                                     <th>Id</th>
                                     <th>Code</th>
                                     <th>Book Name</th>
