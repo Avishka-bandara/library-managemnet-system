@@ -24,7 +24,7 @@ $(document).ready(function(){
                 { data: "book_name", title: "Book Name"},
                 { data: "book_author", title: "Author"},
                 { data: "book_publisher", title: "Publisher"},
-                { data: "id", title: "Available"},
+                { data: "is_available", title: "Available"},
                 { data: "quantity", title: "Quantity"},
                 { data: "id", title: "Action"},
                 
@@ -47,11 +47,22 @@ $(document).ready(function(){
                     orderable: false,
                     searchable: false,
                     render: function(data){
-                        return(
-                            `<div>
-                                <span class="badge badge-success">Available</span>
-                                </div>`
+                        if(data === 1){
+                            return(
+                                `<span class="badge bg-success">Available</span>`
+                            )
+                        }
+                        else if(data === -1){
+                            return(
+                            `<span class="badge bg-secondary">Removed</span>`
                         )
+                        }
+                        else{
+                            return(
+                                `<span class="badge bg-danger">Unavailable</span>`
+                            )
+                        }
+                        
                     }
                   },
                   {
@@ -61,7 +72,7 @@ $(document).ready(function(){
                     render: function(data){
                         return(`
                              <div class="d-inline-block">  
-                                <a href= "book/edit-book" style="text-decoration: none;"  class="text-secondary">
+                                <a href= "book/edit-book/${data}" style="text-decoration: none;"  class="text-secondary">
                                     <i class="fa fa-eye d-flex px-2 text-md mb-0 "aria-hidden="true">  </i>  
                                 </a>
                             </div>

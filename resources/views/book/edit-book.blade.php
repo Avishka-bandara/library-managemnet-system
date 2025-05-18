@@ -4,6 +4,15 @@
     Edit Book
 @endsection
 
+@vite([
+    'resources/assets/libs/toastr/toastr.js',
+    'resources/assets/libs/toastr/toastr.css',
+    'resources/css/app.css',  
+    'resources/js/book/edit-book.js', 
+    'resources/js/app.js',
+    'resources/scss/app.scss'
+])
+
 
 @section('body-content')
 
@@ -19,14 +28,14 @@
             <div class="col-md-6">
                 <div class="input-group-outline my-3">
                     <label class="form-label fs-6">Code</label>
-                    <input type="text" class="form-control" style="box-shadow: none " id="code" name="code"
+                    <input type="text" class="form-control" style="box-shadow: none " id="code" name="code" value="{{ $book->book_isbn }}"
                         required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class=" input-group-outline my-3">
                     <label class="form-label fs-6">Book Name</label>
-                    <input type="text" class="form-control"style="box-shadow: none " id="book_name" name="book_name"
+                    <input type="text" class="form-control"style="box-shadow:none " id="book_name" name="book_name" value="{{ $book->book_name }}" 
                         required>
                 </div>
             </div>
@@ -35,14 +44,14 @@
             <div class="col-md-6">
                 <div class="input-group-outline  my-3">
                     <label class="form-label fs-6">Author</label>
-                    <input type="number" class="form-control" style="box-shadow: none "id="author" name="author"
+                    <input type="text" class="form-control" style="box-shadow: none "id="author" name="author" value="{{ $book->book_author }}"
                         required>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class=" input-group-outline my-3">
                     <label class="form-label fs-6">Publisher</label>
-                    <input type="email" class="form-control"style="box-shadow: none " id="publisher" name="publisher">
+                    <input type="text" class="form-control"style="box-shadow: none " id="publisher" name="publisher" value="{{ $book->book_publisher }}">
                 </div>
             </div>
         </div>
@@ -61,13 +70,13 @@
             <div class="col-md-6">
                 <div class="textarea  my-3">
                     <label class="form-label fs-6">Remarks</label>
-                    <textarea class="form-control" style="box-shadow: none; aria-label="With textarea" id="remarks" name="remarks"></textarea>
+                    <textarea class="form-control" style="box-shadow: none; aria-label:With textarea;" id="remarks" name="remarks"></textarea>
                 </div>
             </div>
         </div>
 
         <button type="submit" class="btn btn-success mt-5" style="width: 12rem">Update</button>
-        <button type="submit" class="btn btn-danger mt-5 " >Delete</button>
+        <button type="button" id="btn-delete" class="btn btn-danger mt-5 " value="{{ $book->id }}" >Delete</button>
     </form>
 </div>
 @endsection
