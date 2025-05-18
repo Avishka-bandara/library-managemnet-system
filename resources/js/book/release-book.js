@@ -28,7 +28,8 @@ $(document).ready(function(){
         
     });
 });
-
+getMembers();
+getBooks();
 
 $(document).on('submit', '#release-book-form', function(e){
     e.preventDefault();
@@ -44,8 +45,9 @@ $(document).on('submit', '#release-book-form', function(e){
         method: 'POST',
         data: formData,
         success: function(response){
+            window.location.reload();
             toastr.success(response.message);
-            $('#release-book-form')[0].reset();
+            // $('#release-book-form')[0].reset();
         },
         error: function(xhr){
             toastr.error('Error: ' + xhr.responseJSON.message); 
@@ -53,6 +55,39 @@ $(document).on('submit', '#release-book-form', function(e){
     })
 
 })
+
+
+function getBooks(){
+    $.ajax({
+        url: baseurl + 'api/get-available-books',
+        method: 'GET',
+        success: function(response){
+            let options = '<option value="" readonly>Select Book</option>';
+            response.data.forEach(element => {
+                options += `<option value="${element.book_isbn}">${element.book_name}</option>`;
+            });
+            $('#book_id').html(options);
+        }
+    })
+
+}
+
+
+function getMembers(){
+    $.ajax({
+        url: baseurl + 'api/get-active-members',
+        method: 'GET',
+        success: function(response){
+            let options = '<option value="" readonly>Select Member</option>';
+            response.data.forEach(member => {
+                options += `<option value="${member.id}">${member.member_name}</option>`;
+            });
+             $('#member_id').html(options);
+        }
+    })
+    
+        
+}
 
 
 

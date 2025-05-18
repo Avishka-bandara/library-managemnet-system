@@ -19,6 +19,7 @@ Route::get('/view-members',[MemberController::class, 'viewMembers'])->name('memb
 Route::get('/get-members',[MemberController::class, 'getMember'])->name('member.get-members');
 Route::Post('/update-member/{id}',[MemberController::class, 'updateMember'])->name('member.update-member-save');
 Route::post('/delete-members/{id}',[MemberController::class, 'deleteMember'])->name('member.delete-members');
+Route::get('/get-active-members',[MemberController::class, 'getActiveMembers'])->name('member.get-active-members');
 
 
 
@@ -39,3 +40,4 @@ Route::Post('/delete-book/{id}',[BookController::class,'deleteBook'])->name('boo
 
 Route::Post('/release/release-new-book/save',[MemberController::class, 'releaseNewBook'])->name('member.release-new-book-save');
 Route::get('/view-releases',[BookController::class, 'releaseBookDetail'])->name('book.view-release');
+Route::get('/get-available-books',[BookController::class, 'getAvailableBooks'])->name('book.get-available-books');

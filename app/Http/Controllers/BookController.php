@@ -69,7 +69,7 @@ class BookController extends Controller
 
     public function newBookRelease(){
 
-        $books = Book::all();
+        $books = Book::where('is_available', 1)->get();
         $members = Member::all();
         $date = Carbon::now()->format('Y-m-d');
         return view('book.release-book', compact('books', 'members', 'date'));
@@ -115,5 +115,10 @@ class BookController extends Controller
             ]);
             return response()->json(['message' => 'Book deleted successfully'], 200);
         }
+    }
+
+    public function getAvailableBooks(){
+        $books = Book::where('is_available', 1)->get();
+        return response()->json(['data' => $books], 200);
     }
 }

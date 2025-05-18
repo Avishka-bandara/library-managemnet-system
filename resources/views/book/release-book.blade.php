@@ -34,10 +34,10 @@
                         <label class="form-label">Member Name</label>
                         <select class="form-control" style="box-shadow: none " id="member_id" name="member_id"
                             required>
-                            <option value="" readonly>select a memeber</option>
-                            @foreach ($members as $member)
+                            {{-- <option value="" readonly>select a member</option> --}}
+                            {{-- @foreach ($members as $member)
                                 <option value="{{ $member->id}}">{{ $member->member_name }}</option>
-                            @endforeach
+                            @endforeach --}}
                         </select>
                     </div>
                 </div>
@@ -53,12 +53,12 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12">
                     <div class="input-group-outline  my-3">
-                        <label class="form-label">Book Name</label>
+                        <label class="form-label">Book Category</label>
                         <select class="form-control" style="box-shadow: none " id="book_id" name="book_id"required>
-                            <option value="" readonly>select a book</option>
-                            @foreach($books as $book)
+                            {{-- <option readonly>select a book</option> --}}
+                            {{-- @foreach($books as $book)
                             <option value="{{$book->id}}">{{$book->book_isbn}}.{{$book->book_name}}</option>
-                            @endforeach
+                            @endforeach --}}
                         </select>
                             
                     </div>

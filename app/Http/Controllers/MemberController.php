@@ -116,7 +116,7 @@ class MemberController extends Controller
     public function releaseNewBook(request $request){
         // dd($request->all());
 
-    $validated = $request->validate([
+        $validated = $request->validate([
             'book_id' => 'required',
             'member_id' => 'required',
             'release_date' => 'required|date',
@@ -135,12 +135,24 @@ class MemberController extends Controller
         ]);
 
         $bookId = Book::where('id', $request->input('book_id'))->first();
-        $bookId->update([
-            'quantity'=> $bookId->quantity - 1, 
-        ]);
-
+        if($bookId->quantity == 1){
+            $bookId->update([
+                'quantity'=> $bookId->quantity - 1,
+                'is_available' => 0,
+            ]);
         
+        }else{
+             $bookId->update([
+            'quantity'=> $bookId->quantity - 1, 
+            ]);
+        }
         return response()->json(['message' => 'Book released successfully'], 200);
+    }
+
+
+    public function getActiveMembers(){
+        $members = Member::where('is_active', 1)->get();
+        return response()->json(['data' => $members], 200);
     }
 
 }
