@@ -15,5 +15,6 @@ class Member extends Model
         'contact_number',
         'email',
         'dob',
+        'is_active'
     ];
 }
