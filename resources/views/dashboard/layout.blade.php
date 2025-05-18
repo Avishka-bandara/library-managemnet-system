@@ -257,9 +257,8 @@
     </div>
 </nav>
 <body>
-    @yield('body-content')
-   
-    
+    @yield('body-content') 
 </main>
 </body>
 </html>
+
