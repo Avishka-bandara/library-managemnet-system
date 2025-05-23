@@ -48,9 +48,12 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 ps" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">
-                    Members</h6>
+                <a  data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample">
+                    
+                    <h6 class="ps-4 ms-2 text-uppercase text-s text-white font-weight-bolder opacity-8">Members</h6>
+                </a>
             </li>
+            <div class="collapse" id="collapseExample">
             <li class="nav-item">
                 <a class="nav-link text-white  "
                     href="{{ route('member.view') }}">
@@ -60,6 +63,7 @@
                     </div>
                 </a>
             </li>
+            
             <li class="nav-item">
                 <a class="nav-link text-white "
                     href="{{route('member.add-new-member') }}">
@@ -69,9 +73,14 @@
                     </div>
                 </a>
             </li>
+            </div>
+           
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Books</h6>
+                
+                <h6 class="ps-4 ms-2 text-uppercase text-s text-white font-weight-bolder opacity-8">Books</h6>
             </li>
+       
+            {{-- <div class="collapse" id="collapseExample1"> --}}
             <li class="nav-item">
                 <a class="nav-link text-white"
                     href="{{ route('book.view') }}">
@@ -81,19 +90,9 @@
                     </div>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white"
-                    href="{{route('book.new-book')}}">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        
-                        <span class="nav-link-text ms-1">Add New Books</span>
-                    </div>
-                </a>
-            </li>
-
-            <li class="nav-item mt-3">
+            {{-- <li class="nav-item mt-3">
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Release Books</h6>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link text-white  "
                     href="{{route('book.view-release')}}">
@@ -109,10 +108,23 @@
                         <span class="nav-link-text ms-1">Release new book</span>
                     </div>
                 </a>
-            </li>            
+            </li>     
+            <li class="nav-item">
+                <a class="nav-link text-white"
+                    href="{{route('book.new-book')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        
+                        <span class="nav-link-text ms-1">Add New Books</span>
+                    </div>
+                </a>
+            </li>   
+            {{-- </div>     --}}
+             <a  data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="true" aria-controls="collapseExample1">
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">User Profile</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-s text-white font-weight-bolder opacity-8">User Profile</h6>
             </li>
+            </a>
+            <div class="collapse" id="collapseExample1">
             <li class="nav-item">
                 <a class="nav-link text-white   "
                     href="#">
@@ -121,7 +133,17 @@
                     </div>
                     <span class="nav-link-text ms-1">Profile</span>
                 </a>
-            </li>            
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link text-white   "
+                    href="{{route('account.finance')}}">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="material-icons opacity-10">attach_money</i>
+                    </div>
+                    <span class="nav-link-text ms-1">Financial</span>
+                </a>
+            </li> 
+            </div>           
         </ul>
     </div>
 </aside>

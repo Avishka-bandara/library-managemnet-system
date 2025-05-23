@@ -17,4 +17,7 @@ class Member extends Model
         'dob',
         'is_active'
     ];
+
+
+    
 }

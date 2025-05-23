@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\financeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -42,4 +43,7 @@ Route::get('/release/new-release',[BookController::class, 'newBookRelease'])->na
 Route::Post('/release/release-new-book/save',[MemberController::class, 'releaseNewBook'])->name('member.release-new-book-save');
 Route::get('/view-releases',[BookController::class, 'viewBookRelease'])->name('book.view-release');
 
+
+
+Route::get('account/finance', [financeController::class, 'index'])->name('account.finance');
 require __DIR__.'/auth.php';
